@@ -1,7 +1,5 @@
 .Content {
     text-align: center;
-    width : 80%;
     height : 100%;
-    border-style: solid;
-    display: inline-block;
+    background-color: lightcoral;
 }
