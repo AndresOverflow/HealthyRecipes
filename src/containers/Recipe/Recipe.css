@@ -1,0 +1,11 @@
+.Recipe {
+    width: 23% ;
+    box-shadow: 0 2px 3px #ccc;
+    text-align: center;
+    border: 1px solid #eee;
+    margin : 2%;
+    padding-top : 16px;
+    padding-bottom: 16px;
+    display: inline-block;
+}
+
