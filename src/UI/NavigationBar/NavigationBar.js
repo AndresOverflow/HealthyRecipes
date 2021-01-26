@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
+import {Link} from 'react-router-dom';
+
 import {TABLET_LANDSCAPE_BREAKPOINT} from "../../App";
 
 const Box = styled.div`
@@ -24,11 +26,12 @@ const Box = styled.div`
 export default (props) => {
   return (
     <Box>
-      <h1>Home</h1>
-      <h2> Create a recipe </h2>
-      <h2> Favourites </h2>
-      <h2> My recipes </h2>
-      <h2>sign in</h2>
+      <Link to="/"><h1>Home</h1> </Link>
+      <Link to="/create-recipe"><h2>Create Recipe</h2> </Link>
+      <Link to="/favourite-recipes"><h2>Favourite Recipes</h2> </Link>
+      <Link to="/my-recipes"><h2>My Recipes</h2> </Link>
+      <Link to="/sign-in"><h2>Sign in</h2> </Link>
+
     </Box>
   );
 }

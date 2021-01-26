@@ -1,6 +1,16 @@
 .CreateRecipe {
     background-color: aquamarine;
-    border : 1px solid rgb(184, 138, 138);
-    text-align: center;
+    border : 1px solid rgb(88, 80, 80);
+    text-align: center ;
     
+      display: grid;
+      grid-column: 1 / span 2;
+      grid-auto-flow: column;
+      grid-auto-columns: max-content;
+      align-content: center;
+      justify-content: space-between;
+
+    @media (min-width: 56,25rem) {
+        grid-column: 1 / span 2;
+      }
 }

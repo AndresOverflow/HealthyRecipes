@@ -8,7 +8,7 @@ class Favourites extends Component {
         return (
             <div className = {classes.Favourites}>
                 <h1> Here you can see your favourite Recipes!!</h1>
-                <form> asdffasd</form>
+                
             </div>
         );
     }

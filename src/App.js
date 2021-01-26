@@ -1,4 +1,6 @@
 import React from 'react';
+import {BrowserRouter, Route} from 'react-router-dom';
+
 import './App.css'
 import NavigationBar from "./UI/NavigationBar/NavigationBar";
 import RecipesContent from "./UI/RecipesContent/RecipesContent";
@@ -6,6 +8,7 @@ import styled from "styled-components";
 import Discounts from "./UI/SideBar/Discounts";
 import CreateRecipe from './containers/CreateRecipe/CreateRecipe';
 import Favourites from './containers/Favourites/Favourites';
+
 
 export const TABLET_LANDSCAPE_BREAKPOINT = '56.25em'
 
@@ -22,11 +25,13 @@ const App = styled.div`
 `
 
 export default () => (
-  <App>
-    <NavigationBar/>
-    <Discounts/>
-    <RecipesContent/>
-    <CreateRecipe/>
-    <Favourites />
-  </App>
+  <BrowserRouter>
+    <App>
+      <Route path = "/" component = {NavigationBar}/>
+      <Route path = "/" exact component={Discounts} />
+      <Route path = "/" exact component={RecipesContent} />
+      <Route path = "/create-recipe" component = {CreateRecipe} />
+      <Route path = "/favourite-recipes" component = {Favourites} />
+    </App>
+  </BrowserRouter>
 );
