@@ -6,6 +6,7 @@ const Discounts = styled.div`
   width: 100%;
   border-bottom: 1px solid lightgray;
   background-color: lightgoldenrodyellow;
+  
 `
 
 const Discount = styled.div`
