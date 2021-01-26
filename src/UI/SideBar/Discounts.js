@@ -20,6 +20,7 @@ export default () => {
     setDiscount(response.data.value)
   }, [])
   return <Discounts>
+    <h2> Discounts Section : </h2>
     {discount ? <Discount>{discount}</Discount> : null}
   </Discounts>
 };

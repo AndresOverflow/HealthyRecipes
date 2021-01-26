@@ -31,6 +31,7 @@ class Discounts extends Component {
     });
     return (
       <div>
+        <h2>Discounts Section : </h2>
         <p>{discounts}</p>
 
       </div>
