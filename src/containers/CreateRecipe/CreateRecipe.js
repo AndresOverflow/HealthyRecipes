@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import axios from 'axios';
+import axios from '../../axios-orders';
 
 import classes from './CreateRecipe.css';
 
@@ -10,24 +10,27 @@ class CreateRecipe extends Component {
             description : ''
         }
 
-    postDataHandler = () => {
+    postDataHandler = (event) => {
+        event.preventDefault();
+        console.log('submitted');
         const data = {
             title : this.state.title,
             description : this.state.description
         }
-        axios.post("https://jsonplaceholder.typicode.com/posts", data)
-            .then(response =>{
-                console.log(response);
-            });
-
-    }
+        console.log(data);
+        axios.post('/recipes.json', data)
+            .then(response => {
+                console.log(response)})
+            .catch(error => {
+                console.log(error)});
+            }
 
     render () {
 
         
 
         let form = ( 
-            <form>
+            <form onSubmit={this.postDataHandler}>
                 <label> Title </label>
                 <input type= "text" name="title" 
                     value={this.state.title} 
@@ -36,7 +39,7 @@ class CreateRecipe extends Component {
                 <textarea rows="4" name="description" 
                     value={this.state.description}
                     onChange={(event) => this.setState({description : event.target.value})}/>
-                <button onClick={this.postDataHandler}> Submit</button>
+                <button> Submit</button>
             </form>
 
         );
