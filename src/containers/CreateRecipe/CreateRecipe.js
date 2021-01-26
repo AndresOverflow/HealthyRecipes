@@ -2,16 +2,20 @@ import React, {Component} from 'react';
 import axios from '../../axios-orders';
 
 import classes from './CreateRecipe.css';
+import Spinner from '../../components/UI/Spinner/Spinner'
 
 
 class CreateRecipe extends Component {
     state = {
             title : '',
-            description : ''
+            description : '',
+            loading : false
         }
 
     postDataHandler = (event) => {
+        
         event.preventDefault();
+        this.setState({loading: true})
         console.log('submitted');
         const data = {
             title : this.state.title,
@@ -20,16 +24,17 @@ class CreateRecipe extends Component {
         console.log(data);
         axios.post('/recipes.json', data)
             .then(response => {
-                console.log(response)})
+                console.log(response)
+                this.setState({loading: false})})
             .catch(error => {
                 console.log(error)});
             }
 
     render () {
 
-        
-
-        let form = ( 
+        let form = <Spinner/>
+        if (!this.state.loading) {
+           form = ( 
             <form onSubmit={this.postDataHandler}>
                 <label> Title </label>
                 <input type= "text" name="title" 
@@ -42,8 +47,8 @@ class CreateRecipe extends Component {
                 <button> Submit</button>
             </form>
 
-        );
-
+            );
+        }
 
 
         return (
