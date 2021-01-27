@@ -10,6 +10,7 @@ import CreateRecipe from './containers/CreateRecipe/CreateRecipe';
 import Favourites from './containers/Favourites/Favourites';
 import SignUp from './containers/SignUp/SignUp';
 import Login from './containers/Login/Login';
+import Logout from './containers/Logout/Logout';
 
 export const TABLET_LANDSCAPE_BREAKPOINT = '56.25em'
 
@@ -34,5 +35,6 @@ export default () => (
       <Route path = "/favourite-recipes" component = {Favourites} />
       <Route path = "/sign-up" component = {SignUp} />
       <Route path = "/login" component = {Login} />
+      <Route path = "/logout" component = {Logout} />
     </App>
 );
