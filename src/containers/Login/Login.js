@@ -2,10 +2,13 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
 
+
+import Spinner from '../../components/UI/Spinner/Spinner';
+
 import classes from './Login.css';
 import * as actions from '../../store/actions/index'
 
-class Auth extends Component {
+class Login extends Component {
 
     state = {
         password: '',
@@ -37,14 +40,51 @@ class Auth extends Component {
             </form>
         );
 
-        return (
+        let errorMessage = null;
+
+        if (this.props.error) {
+            errorMessage = (
+                <h2>{this.props.error.message}</h2>
+            );
+        }
+
+
+        let renderLoginForm = (
             <div className={classes.SignUp}>
+                {errorMessage}
                 <div><h1>Login</h1></div>
                 <div>{form}</div>
-                <div><Link to="/sign-up"><h1>Not registered yet? Click here to Sign Up</h1></Link></div>
-                
+                <div><Link to="/login"><h1>Not registered yet? Click here to SignUp</h1></Link></div>
+
+            </div>
+        )
+
+
+
+
+
+
+
+
+        if (this.props.loading) {
+            renderLoginForm = <Spinner/>
+        }
+
+
+        return (
+            <div>
+
+                {renderLoginForm}
+               
             </div>
         );
+    }
+}
+
+const mapStateToProps = state => {
+    return {
+        loading: state.auth.loading,
+        error: state.auth.error
     }
 }
 
@@ -54,4 +94,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(null, mapDispatchToProps)(Auth);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

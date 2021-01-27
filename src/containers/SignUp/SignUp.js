@@ -3,9 +3,12 @@ import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
 
 import classes from './SignUp.css';
-import * as actions from '../../store/actions/index'
 
-class Auth extends Component {
+import Spinner from '../../components/UI/Spinner/Spinner';
+
+import * as actions from '../../store/actions/index';
+
+class SignUp extends Component {
 
     state = {
         username: '',
@@ -40,14 +43,46 @@ class Auth extends Component {
             </form>
         );
 
-        return (
+        
+        
+
+        let errorMessage = null;
+
+        if (this.props.error) {
+            errorMessage = (
+                <h2>{this.props.error.message}</h2>
+            );
+        }
+
+
+
+        let renderSignUpForm = (
             <div className={classes.SignUp}>
+                {errorMessage}
                 <div><h3>Register to be able to add recipes</h3></div>
                 <div>{form}</div>
                 <div><Link to="/login"><h1>Already registered? Click here to Log In</h1></Link></div>
 
             </div>
+        )
+
+        if (this.props.loading) {
+            renderSignUpForm = <Spinner/>
+        }
+
+        return (
+            <div>
+
+                {renderSignUpForm}
+            </div>
         );
+    }
+}
+
+const mapStateToProps = state => {
+    return {
+        loading: state.auth.loading,
+        error : state.auth.error
     }
 }
 
@@ -57,4 +92,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(null, mapDispatchToProps)(Auth);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
