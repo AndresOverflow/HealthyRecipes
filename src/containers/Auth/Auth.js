@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 
 import classes from './Auth.css';
+import * as actions from '../../store/actions/index'
 
 class Auth extends Component {
 
@@ -10,12 +12,18 @@ class Auth extends Component {
         email : ''
     }
 
+
+    onSubmitHandler = (event) => {
+        event.prevent
+        alert('Sing Up Done!');
+    }
+
     render () {
 
         
         
         let form = (
-            <form>
+            <form onSubmit={this.onSubmitHandler}>
                 <input type="text" placeholder = "username " 
                     value = {this.state.username}  
                     onChange={(event) => this.setState({username : event.target.value}) }/>
@@ -34,9 +42,16 @@ class Auth extends Component {
                 <div><h3>Register to be able to add recipes</h3></div>
                 <div>{form}</div>
                 <button> Sign Up</button>
+
             </div>
         );
     }
 }
 
-export default Auth;
+const mapDispatchToProps = dispatch => {
+    return {
+        onAuth: (email, password) => dispatch(actions.auth(email, password))
+    };
+};
+
+export default connect(null, mapDispatchToProps)(Auth);
