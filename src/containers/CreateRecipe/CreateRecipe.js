@@ -25,7 +25,8 @@ class CreateRecipe extends Component {
         axios.post('/recipes.json', data)
             .then(response => {
                 console.log(response)
-                this.setState({loading: false})})
+                this.setState({loading: false})
+                this.props.history.push( '/' )})
             .catch(error => {
                 console.log(error)});
             }
