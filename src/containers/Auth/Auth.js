@@ -14,8 +14,11 @@ class Auth extends Component {
 
 
     onSubmitHandler = (event) => {
-        event.prevent
-        alert('Sing Up Done!');
+        console.log("adfads");
+        alert("hii");
+        event.preventDefault();
+        this.props.onAuth(this.state.email, this.state.password);
+        alert("hii");
     }
 
     render () {
@@ -33,6 +36,7 @@ class Auth extends Component {
                 <input type="text" placeholder = "email"
                     value = {this.state.email} 
                     onChange={(event) => this.setState({email : event.target.value})}/>
+                    <button> Sign Up</button>
 
             </form>
         );
@@ -41,7 +45,6 @@ class Auth extends Component {
             <div className={classes.Auth}>
                 <div><h3>Register to be able to add recipes</h3></div>
                 <div>{form}</div>
-                <button> Sign Up</button>
 
             </div>
         );

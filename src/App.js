@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 
 import './App.css'
 import NavigationBar from "./UI/NavigationBar/NavigationBar";
@@ -26,7 +26,6 @@ const App = styled.div`
 `
 
 export default () => (
-  <BrowserRouter>
     <App>
       <Route path = "/" component = {NavigationBar}/>
       <Route path = "/" exact component={Discounts} />
@@ -35,5 +34,4 @@ export default () => (
       <Route path = "/favourite-recipes" component = {Favourites} />
       <Route path = "/sign-up" component = {Auth} />
     </App>
-  </BrowserRouter>
 );
