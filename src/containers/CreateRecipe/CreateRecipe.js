@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from '../../axios-orders';
+import {connect} from 'react-redux';
 
 import classes from './CreateRecipe.css';
 import Spinner from '../../components/UI/Spinner/Spinner'
@@ -22,12 +23,13 @@ class CreateRecipe extends Component {
             description : this.state.description
         }
         console.log(data);
-        axios.post('/recipes.json', data)
+        axios.post('/recipes.json?auth=' + this.props.token, data)
             .then(response => {
                 console.log(response)
                 this.setState({loading: false})
                 this.props.history.push( '/' )})
             .catch(error => {
+                alert("you think you are smarter than me? Log in before trying to create a recipe");
                 console.log(error)});
             }
 
@@ -63,4 +65,10 @@ class CreateRecipe extends Component {
     }
 }
 
-export default CreateRecipe;
+const mapStateToProps = state => {
+    return {
+        token: state.auth.token
+    }
+}
+
+export default connect(mapStateToProps) (CreateRecipe);
