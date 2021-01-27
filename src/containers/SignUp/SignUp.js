@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import {Link} from 'react-router-dom';
 
 import classes from './SignUp.css';
 import * as actions from '../../store/actions/index'
@@ -43,6 +44,7 @@ class Auth extends Component {
             <div className={classes.SignUp}>
                 <div><h3>Register to be able to add recipes</h3></div>
                 <div>{form}</div>
+                <div><Link to="/login"><h1>Already registered? Click here to Log In</h1></Link></div>
 
             </div>
         );
