@@ -21,6 +21,7 @@ class Logout extends Component {
             <div>
                 <h1> Hire me {"<3"} </h1>
                 <button onClick={this.onClickHandler}>Go to home page</button>
+                <h1> Go Go Go</h1>
             </div>
         )
     };
