@@ -47,14 +47,17 @@ class NavigationBar extends Component {
       <Box>
         <Link to="/"><h1>Home</h1> </Link>
         <Link to="/create-recipe"><h2>Create Recipe</h2> </Link>
-        <Link to="/favourite-recipes"><h2>Favourite Recipes</h2> </Link>
-        <Link to="/my-recipes"><h2>My Recipes</h2> </Link>
-        {!this.props.isAuthenticated 
+                {!this.props.isAuthenticated 
         ? <Aux>
+          
           <Link to="/login"><h2>Login</h2></Link>
           <Link to="/sign-up"><h2>Sign up</h2> </Link>  
         </Aux>:
+        <Aux>
+          <Link to="/favourite-recipes"><h2>Favourite Recipes</h2> </Link>
+          <Link to="/my-recipes"><h2>My Recipes</h2> </Link>
           <Link to="/logout"><h2>Log out</h2></Link>
+        </Aux>
         }
       </Box>
 
