@@ -8,16 +8,15 @@ import * as actions from '../../store/actions/index'
 class Auth extends Component {
 
     state = {
-        username: '',
         password: '',
         email : ''
     }
 
 
     onSubmitHandler = (event) => {
-        console.log("user Signed up");
+        console.log("user Logged in");
         event.preventDefault();
-        this.props.onAuth(this.state.email, this.state.password);
+        this.props.onAuth(this.state.email, this.state.password, false);
     }
 
     render () {
@@ -26,16 +25,14 @@ class Auth extends Component {
         
         let form = (
             <form onSubmit={this.onSubmitHandler}>
-                <input type="text" placeholder = "username " 
-                    value = {this.state.username}  
-                    onChange={(event) => this.setState({username : event.target.value}) }/>
+            
                 <input type="text" placeholder = "password"
                     value = {this.state.password} 
                     onChange={(event) => this.setState({password : event.target.value})}/>
                 <input type="text" placeholder = "email"
                     value = {this.state.email} 
                     onChange={(event) => this.setState({email : event.target.value})}/>
-                    <button> Sign Up</button>
+                    <button> Log in</button>
 
             </form>
         );
@@ -53,7 +50,7 @@ class Auth extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onAuth: (email, password) => dispatch(actions.auth(email, password))
+        onAuth: (email, password, isSignup) => dispatch(actions.auth(email, password, isSignup))
     };
 };
 

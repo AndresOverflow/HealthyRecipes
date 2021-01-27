@@ -17,7 +17,7 @@ class Auth extends Component {
     onSubmitHandler = (event) => {
         console.log("user Signed up");
         event.preventDefault();
-        this.props.onAuth(this.state.email, this.state.password);
+        this.props.onAuth(this.state.email, this.state.password, true);
     }
 
     render () {
@@ -53,7 +53,7 @@ class Auth extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onAuth: (email, password) => dispatch(actions.auth(email, password))
+        onAuth: (email, password, isSignup) => dispatch(actions.auth(email, password, isSignup))
     };
 };
 
