@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
-import classes from './Auth.css';
+import classes from './SignUp.css';
 import * as actions from '../../store/actions/index'
 
 class Auth extends Component {
@@ -14,11 +14,9 @@ class Auth extends Component {
 
 
     onSubmitHandler = (event) => {
-        console.log("adfads");
-        alert("hii");
+        console.log("user Signed up");
         event.preventDefault();
         this.props.onAuth(this.state.email, this.state.password);
-        alert("hii");
     }
 
     render () {
@@ -42,7 +40,7 @@ class Auth extends Component {
         );
 
         return (
-            <div className={classes.Auth}>
+            <div className={classes.SignUp}>
                 <div><h3>Register to be able to add recipes</h3></div>
                 <div>{form}</div>
 

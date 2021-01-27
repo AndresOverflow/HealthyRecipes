@@ -30,6 +30,7 @@ export default (props) => {
       <Link to="/create-recipe"><h2>Create Recipe</h2> </Link>
       <Link to="/favourite-recipes"><h2>Favourite Recipes</h2> </Link>
       <Link to="/my-recipes"><h2>My Recipes</h2> </Link>
+      <Link to="/login"><h2>Login</h2></Link>
       <Link to="/sign-up"><h2>Sign up</h2> </Link>
 
     </Box>

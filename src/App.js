@@ -8,8 +8,8 @@ import styled from "styled-components";
 import Discounts from "./UI/SideBar/Discounts";
 import CreateRecipe from './containers/CreateRecipe/CreateRecipe';
 import Favourites from './containers/Favourites/Favourites';
-import Auth from './containers/Auth/Auth';
-
+import SignUp from './containers/SignUp/SignUp';
+import Login from './containers/Login/Login';
 
 export const TABLET_LANDSCAPE_BREAKPOINT = '56.25em'
 
@@ -32,6 +32,7 @@ export default () => (
       <Route path = "/" exact component={RecipesContent} />
       <Route path = "/create-recipe" component = {CreateRecipe} />
       <Route path = "/favourite-recipes" component = {Favourites} />
-      <Route path = "/sign-up" component = {Auth} />
+      <Route path = "/sign-up" component = {SignUp} />
+      <Route path = "/login" component = {Login} />
     </App>
 );
