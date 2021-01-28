@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 
-
+import DeleteButtonRecipe from './DeleteButtonRecipe/DeleteButtonRecipe';
 import Recipe from '../Recipes/Recipe/Recipe';
 import classes from './MyRecipes.css';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import axios from '../../axios-orders';
 import Aux from '../../hoc/Aux';
 import { connect } from 'react-redux';
+
 
 class MyRecipes extends Component {
 
@@ -26,13 +27,14 @@ class MyRecipes extends Component {
                 console.log(response.data);
                 const newRecipes = [];
                 let newRecipe = null;
-                for (let recipeData in response.data) {
-                    newRecipe = [...response.data[recipeData]];
-                    console.log(response.data[recipeData].title);
-                    console.log(response.data[recipeData].description);
+                for (let recipeId in response.data) {
+                    newRecipe = [...response.data[recipeId]];
+                    console.log(response.data[recipeId].title);
+                    console.log(response.data[recipeId].description);
                     newRecipe = ({
-                        title : response.data[recipeData].title,
-                        description: response.data[recipeData].description
+                        recipeId : recipeId,
+                        title : response.data[recipeId].title,
+                        description: response.data[recipeId].description
                     });
 
                     newRecipes.push(newRecipe);
@@ -45,6 +47,19 @@ class MyRecipes extends Component {
             });
     }
 
+    onDeletedRecipe = (index) => {
+        const newRecipes = [...this.state.recipes];
+        console.log(newRecipes);
+        console.log(this.state.recipes)
+        console.log("new recipes " + newRecipes);
+        newRecipes.splice(index, 1);
+        console.log("new recipes " + newRecipes);
+
+        this.setState({recipes: newRecipes});
+
+
+    }
+
     render () {
 
         let recipesToJSX = <Spinner/>;
@@ -53,10 +68,14 @@ class MyRecipes extends Component {
             recipesToJSX = this.state.recipes.map((recipe,index) => {
                 
             return (
-                <Aux>
-                    <Recipe key = {index} title = {recipe.title} description = {recipe.description} />
-                    <button> delete recipe</button>
- 
+                <Aux key={index}>
+                    <Recipe title = {recipe.title} description = {recipe.description} />
+                    <DeleteButtonRecipe title = {recipe.title}
+                        recipeId = {recipe.recipeId}
+                        userId = {this.props.userId}
+                        token = {this.props.token}
+                        index = {index}
+                        onDeletedRecipe = {this.onDeletedRecipe}/>
                 </Aux>
 
                     )
@@ -79,7 +98,8 @@ class MyRecipes extends Component {
 
 const mapStateToProps = state => {
     return {
-        userId : state.auth.userId
+        userId : state.auth.userId,
+        token : state.auth.token
     }
 }
 export default connect(mapStateToProps) (MyRecipes);
