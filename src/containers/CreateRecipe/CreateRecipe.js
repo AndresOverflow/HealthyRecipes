@@ -20,12 +20,13 @@ class CreateRecipe extends Component {
         console.log('submitted');
         const data = {
             title : this.state.title,
-            description : this.state.description
+            description : this.state.description,
+            userId: this.props.userId,
         }
         console.log(data);
         axios.post('/recipes.json?auth=' + this.props.token, data)
             .then(response => {
-                console.log(response)
+                console.log("console" + response)
                 this.setState({loading: false})
                 this.props.history.push( '/' )})
             .catch(error => {
@@ -67,7 +68,8 @@ class CreateRecipe extends Component {
 
 const mapStateToProps = state => {
     return {
-        token: state.auth.token
+        token: state.auth.token,
+        userId: state.auth.userId
     }
 }
 
