@@ -13,6 +13,7 @@ import SignUp from './containers/SignUp/SignUp';
 import Login from './containers/Login/Login';
 import Logout from './containers/Logout/Logout';
 import * as actions from './store/actions/index';
+import Aux from './hoc/Aux';
 
 export const TABLET_LANDSCAPE_BREAKPOINT = '56.25em'
 
@@ -36,19 +37,44 @@ class App extends Component {
     this.props.onTryAutoSignup();
   }
 
+
+
+
   render () {
+
+    let routes = (
+      <Aux>
+        <Route path = "/sign-up" component = {SignUp} />
+        <Route path = "/login" component = {Login} />
+      </Aux>
+
+    );
+
+    if ( this.props.isAuthenticated) {
+      routes = (
+        <Aux>
+          <Route path = "/favourite-recipes" component = {Favourites} />
+          <Route path = "/logout" component = {Logout} />
+        </Aux>
+      );
+    }
+
     return (
       <AppBox>
         <Route path = "/" component = {NavigationBar}/>
         <Route path = "/" exact component={Discounts} />
         <Route path = "/" exact component={RecipesContent} />
         <Route path = "/create-recipe" component = {CreateRecipe} />
-        <Route path = "/favourite-recipes" component = {Favourites} />
-        <Route path = "/sign-up" component = {SignUp} />
-        <Route path = "/login" component = {Login} />
-        <Route path = "/logout" component = {Logout} />
+        {routes}
       </AppBox>
     );
+  }
+}
+
+
+const mapStateToProps = state => {
+  return {
+    isAuthenticated : state.auth.token !== null
   }
 }
 
@@ -58,4 +84,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
