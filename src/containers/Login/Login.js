@@ -54,7 +54,7 @@ class Login extends Component {
                 {errorMessage}
                 <div><h1>Login</h1></div>
                 <div>{form}</div>
-                <div><Link to="/login"><h1>Not registered yet? Click here to SignUp</h1></Link></div>
+                <div><Link to="/sign-up"><h1>Not registered yet? Click here to SignUp</h1></Link></div>
 
             </div>
         );

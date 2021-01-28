@@ -14,6 +14,7 @@ import Login from './containers/Login/Login';
 import Logout from './containers/Logout/Logout';
 import * as actions from './store/actions/index';
 import Aux from './hoc/Aux';
+import MyRecipes from './containers/MyRecipes/MyRecipes';
 
 export const TABLET_LANDSCAPE_BREAKPOINT = '56.25em'
 
@@ -46,6 +47,7 @@ class App extends Component {
       <Aux>
         <Route path = "/sign-up" component = {SignUp} />
         <Route path = "/login" component = {Login} />
+        <Route path = "/logout" component = {Logout} />
       </Aux>
 
     );
@@ -54,7 +56,7 @@ class App extends Component {
       routes = (
         <Aux>
           <Route path = "/favourite-recipes" component = {Favourites} />
-          <Route path = "/logout" component = {Logout} />
+          <Route path = "/my-recipes" component = {MyRecipes} />
         </Aux>
       );
     }
