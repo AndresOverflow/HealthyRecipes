@@ -56,6 +56,7 @@ class NavigationBar extends Component {
         <Aux>
           <Link to="/favourite-recipes"><h2>Favourite Recipes</h2> </Link>
           <Link to="/my-recipes"><h2>My Recipes</h2> </Link>
+          <h2>{this.props.userEmail}</h2>
           <Link to="/logout"><h2>Log out</h2></Link>
         </Aux>
         }
@@ -67,7 +68,8 @@ class NavigationBar extends Component {
 
 const mapStateToProps = state => {
   return {
-    isAuthenticated : state.auth.token !== null
+    isAuthenticated : state.auth.token !== null,
+    userEmail : state.auth.email
   };
 };
 
