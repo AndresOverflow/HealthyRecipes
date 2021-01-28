@@ -57,7 +57,7 @@ class NavigationBar extends Component {
           <Link to="/favourite-recipes"><h2>Favourite Recipes</h2> </Link>
           <Link to="/my-recipes"><h2>My Recipes</h2> </Link>
           <h2>{this.props.userEmail}</h2>
-          <Link to="/logout"><h2>Log out</h2></Link>
+          <Link to="/logout"><h2>Logout</h2></Link>
         </Aux>
         }
       </Box>

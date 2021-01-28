@@ -13,7 +13,7 @@ import SignUp from './containers/SignUp/SignUp';
 import Login from './containers/Login/Login';
 import Logout from './containers/Logout/Logout';
 import * as actions from './store/actions/index';
-import Aux from './hoc/Aux';
+//import Aux from './hoc/Aux';
 import MyRecipes from './containers/MyRecipes/MyRecipes';
 
 export const TABLET_LANDSCAPE_BREAKPOINT = '56.25em'
@@ -43,14 +43,19 @@ class App extends Component {
 
   render () {
 
+    //BIG PROBLEM!!
+
+    /*
     let routes = (
       <Aux>
         <Route path = "/sign-up" component = {SignUp} />
         <Route path = "/login" component = {Login} />
         <Route path = "/logout" component = {Logout} />
+
       </Aux>
 
     );
+
 
     if ( this.props.isAuthenticated) {
       routes = (
@@ -60,14 +65,20 @@ class App extends Component {
         </Aux>
       );
     }
-
+    */
     return (
       <AppBox>
         <Route path = "/" component = {NavigationBar}/>
         <Route path = "/" exact component={Discounts} />
         <Route path = "/" exact component={RecipesContent} />
         <Route path = "/create-recipe" component = {CreateRecipe} />
-        {routes}
+        <Route path = "/sign-up" component = {SignUp} />
+        <Route path = "/login" component = {Login} />
+        <Route path = "/logout" component = {Logout} />
+        <Route path = "/favourite-recipes" component = {Favourites} />
+        <Route path = "/my-recipes" component = {MyRecipes} />
+
+
       </AppBox>
     );
   }
@@ -76,7 +87,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    isAuthenticated : state.auth.token !== null
+    isAuthenticated : state.auth.token !== null,
+    token : state.auth.token
   }
 }
 

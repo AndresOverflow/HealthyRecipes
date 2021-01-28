@@ -15,9 +15,15 @@ class Login extends Component {
         email : ''
     }
 
+    componentDidMount () {
+        console.log("vale of token" + this.props.token);
+        if (this.props.isAuthenticated) {
+            this.props.history("/");
+        }
+    }
 
     onSubmitHandler = (event) => {
-        console.log("user Logged in");
+        console.log("user tried to Logged in");
         event.preventDefault();
         this.props.onAuth(this.state.email, this.state.password, false);
     }
@@ -63,6 +69,8 @@ class Login extends Component {
             renderLoginForm = <Spinner/>
         }
 
+        console.log("Value of isAuthenticated after loggin out  " + this.props.isAuthenticated)
+        console.log("Value of token" + this.props.token)
         let authRedirect = this.props.isAuthenticated ? <Redirect to="/"/> : null;
 
         return (
@@ -79,7 +87,8 @@ const mapStateToProps = state => {
     return {
         loading: state.auth.loading,
         error: state.auth.error,
-        isAuthenticated : state.auth.token !== null
+        isAuthenticated : state.auth.token !== null,
+        token: state.auth.token
     }
 }
 

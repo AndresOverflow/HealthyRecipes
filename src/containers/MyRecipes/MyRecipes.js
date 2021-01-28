@@ -5,6 +5,7 @@ import Recipe from '../Recipes/Recipe/Recipe';
 import classes from './MyRecipes.css';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import axios from '../../axios-orders';
+import Aux from '../../hoc/Aux';
 import { connect } from 'react-redux';
 
 class MyRecipes extends Component {
@@ -50,7 +51,17 @@ class MyRecipes extends Component {
 
         if (this.state.recipes) {
             recipesToJSX = this.state.recipes.map((recipe,index) => {
-            return <Recipe key = {index} title = {recipe.title} description = {recipe.description} />
+                
+            return (
+                <Aux>
+                    <Recipe key = {index} title = {recipe.title} description = {recipe.description} />
+                    <button> delete recipe</button>
+ 
+                </Aux>
+
+                    )
+
+            
         });
 
 
@@ -71,5 +82,4 @@ const mapStateToProps = state => {
         userId : state.auth.userId
     }
 }
-
 export default connect(mapStateToProps) (MyRecipes);
