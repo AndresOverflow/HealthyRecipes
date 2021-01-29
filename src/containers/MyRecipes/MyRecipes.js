@@ -69,7 +69,7 @@ class MyRecipes extends Component {
                 
             return (
                 <Aux key={index}>
-                    <Recipe title = {recipe.title} description = {recipe.description} />
+                    <Recipe title = {recipe.title} description = {recipe.description} recipeId ={recipe.recipeId} />
                     <DeleteButtonRecipe title = {recipe.title}
                         recipeId = {recipe.recipeId}
                         userId = {this.props.userId}

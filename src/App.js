@@ -15,6 +15,7 @@ import Logout from './containers/Logout/Logout';
 import * as actions from './store/actions/index';
 //import Aux from './hoc/Aux';
 import MyRecipes from './containers/MyRecipes/MyRecipes';
+import SingleRecipe from './containers/SingleRecipe/SingleRecipe';
 
 export const TABLET_LANDSCAPE_BREAKPOINT = '56.25em'
 
@@ -77,6 +78,7 @@ class App extends Component {
         <Route path = "/logout" component = {Logout} />
         <Route path = "/favourite-recipes" component = {Favourites} />
         <Route path = "/my-recipes" component = {MyRecipes} />
+        <Route path = "/single-recipe" component = {SingleRecipe}/>
 
 
       </AppBox>

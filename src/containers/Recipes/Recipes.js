@@ -24,13 +24,14 @@ class Recipes extends Component {
                 console.log(response.data);
                 const newRecipes = [];
                 let newRecipe = null;
-                for (let recipeData in response.data) {
-                    newRecipe = [...response.data[recipeData]];
-                    console.log(response.data[recipeData].title);
-                    console.log(response.data[recipeData].description);
+                for (let recipeId in response.data) {
+                    newRecipe = [...response.data[recipeId]];
+                    console.log(response.data[recipeId].title);
+                    console.log(response.data[recipeId].description);
                     newRecipe = ({
-                        title : response.data[recipeData].title,
-                        description: response.data[recipeData].description
+                        title : response.data[recipeId].title,
+                        description: response.data[recipeId].description,
+                        recipeId : recipeId
                     });
 
                     newRecipes.push(newRecipe);
@@ -48,7 +49,10 @@ class Recipes extends Component {
 
         if (this.state.recipes) {
             recipesToJSX = this.state.recipes.map((recipe,index) => {
-            return <Recipe key = {index} title = {recipe.title} description = {recipe.description} />
+            return <Recipe key = {index} 
+            title = {recipe.title} 
+            description = {recipe.description} 
+            recipeId={recipe.recipeId} />
         });
 
 
