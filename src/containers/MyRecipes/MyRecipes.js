@@ -77,20 +77,12 @@ class MyRecipes extends Component {
                         index = {index}
                         onDeletedRecipe = {this.onDeletedRecipe}/>
                 </Aux>
-
                     )
-
-            
         });
-
-
         }
                 return (
             <div className={classes.Recipes}>
                 {recipesToJSX}
-
-
-
             </div>
         );
     }
