@@ -1,5 +1,4 @@
 import axios from '../../axios-orders';
-import axios2 from 'axios';
 import React, { Component } from  'react';
 import classes from './SingleRecipe.css';
 import Aux from '../../hoc/Aux';
@@ -66,57 +65,24 @@ class SingleRecipe extends Component {
 
     }
 
-    onSubmitChangesHandler = (event) => {
-        //event.preventDefault();
-        alert(this.state.recipe.recipeId + " esto era el recipeId");
+    onSubmitChangesHandler = async (event) => {
+        event.preventDefault();
+        console.log(this.state.recipe.recipeId + " esto era el recipeId");
 
 
         const data = {
             title : this.state.recipe.title,
-            decription : this.state.recipe.description,
+            description : this.state.recipe.description,
             userId: this.state.recipe.userId
         }
-        alert(this.state.recipe.recipeId + " esto era el recipeId");
-        const res = axios.put('/recipes/'+ this.state.recipe.recipeId +'.json?auth=' + this.props.token, data)
-            .then(response => {
-                console.log(response);
-                alert(response)
-            }).catch(error => {
-                alert(error);
-            });
-        alert("put done");
+            
+           debugger;
+            await axios.put('/recipes/'+ this.state.recipe.recipeId +'.json?auth=' + this.props.token, data)
 
-        const axiosrequest1 = axios2.get('https://httpbin.org/get');
-const axiosrequest2 = axios2.get('https://httpbin.org/get');
-const axiosrequest3 = axios2.get('https://httpbin.org/get');
-// you could also use destructuring to have an array of responses
-await axios2.all([axiosrequest1, axiosrequest2, axiosrequest3]).then(axios2.spread(function(res1, res2, res3) {
-  console.log(res1);
-  console.log(res2);
-  console.log(res3);
-}));
+        this.setState({editable : false});
+            
             
     }
-/*
-    event.preventDefault();
-    this.setState({loading: true})
-    console.log('submitted');
-    const data = {
-        title : this.state.title,
-        description : this.state.description,
-        userId: this.props.userId,
-    }
-    console.log(data);
-    axios.post('/recipes.json?auth=' + this.props.token, data)
-        .then(response => {
-            console.log("console" + response)
-            this.setState({loading: false})
-            this.props.history.push( '/' )})
-        .catch(error => {
-            alert("you think you are smarter than me? Log in before trying to create a recipe");
-            console.log(error)});
-        }*/
-
     render () {
 
 
@@ -161,18 +127,6 @@ await axios2.all([axiosrequest1, axiosrequest2, axiosrequest3]).then(axios2.spre
            </div>
         }
 
-        /*
-<input type= "text" name="title" 
-                    value={this.state.title} 
-                    onChange={(event) => this.setState({title : event.target.value})}/>
-                <label> Description </label>
-                <textarea rows="4" name="description" 
-                    value={this.state.description}
-                    onChange={(event) => this.setState({description : event.target.value})}/>
-        */
-
-    
-
 
 
 
@@ -186,7 +140,8 @@ await axios2.all([axiosrequest1, axiosrequest2, axiosrequest3]).then(axios2.spre
 
 const mapStateToProps = state => {
     return {
-        userId : state.auth.userId
+        userId : state.auth.userId,
+        token: state.auth.token
     };
 };
 
