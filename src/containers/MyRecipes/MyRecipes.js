@@ -78,7 +78,7 @@ class MyRecipes extends Component {
                         onDeletedRecipe = {this.onDeletedRecipe}/>
                 </Aux>
                     )
-        });
+            });
         }
                 return (
             <div className={classes.Recipes}>
