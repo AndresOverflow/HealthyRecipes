@@ -36,7 +36,8 @@ html {
 
 h2 {
   font-size: 2rem;
-  color: thistle;
+  /*color: thistle;*/
+  color : white;
 }
 
 h1 {

@@ -19,7 +19,7 @@
 
 .RecipeId {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-gap:1rem
 }
 
@@ -28,9 +28,13 @@
     grid-row: 1/2;
 
 }
-.Recipe_Image {
+.Recipe_Image_Temp {
     background-color: darkgoldenrod;
     grid-row: 2/3;
+}
+.Recipe_Image {
+    grid-row: 4/5;
+    width: 10%;
 
 }
 .Recipe_Description {

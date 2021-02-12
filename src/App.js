@@ -83,7 +83,6 @@ class App extends Component {
         <Route path = "/favourite-recipes" component = {Favourites} />
         <Route path = "/my-recipes" component = {MyRecipes} />
         <Route path = "/single-recipe" component = {SingleRecipe}/>
-        ul
 
 
       </div>

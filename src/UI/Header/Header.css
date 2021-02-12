@@ -1,7 +1,7 @@
 .Header {
 
     /*background-color: #2D111C ; */
-    height: 85vh;
+    height: 93vh;
     background-image: linear-gradient(#2D111Cc5, #2D111Cc5) ,url(../../assets/images/header_image.jpg);
     background-size: cover;
     background-position: center;
@@ -10,8 +10,10 @@
     grid-row: 2 / 3;
     padding: 1rem;
     
+    position: relative;
+
     display: grid;
-    grid-template-rows: repeat (8, 1fr);
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 5rem;
     grid-template-columns: repeat(8, 1fr);
 
 
@@ -31,12 +33,13 @@
 }
 
 .Header_Button {
-    grid-column : 5 / 6;
-    grid-row: 3 / 4;
+    grid-column : 2 / 4;
+    grid-row: 6 / 7;
+    align-self: center;
 
     width: 100%;
     height: 80%;
-    border-radius: 3%;
+    border-radius: 6%;
     border: 1px solid #000000;
     box-shadow: 0 1px 2px #111;
     background-color: #DDC8C4;
@@ -61,4 +64,36 @@
 
 }
 
+.Image_2 {
+    grid-column: 4 / 7;
+    grid-row: 5/7;
+    width: 40%;
+    align-self: center;
+    justify-self: center;
+    box-shadow: 0 4px 6px #111;
 
+}
+
+.Image_1 {
+    grid-column: 5 / 7;
+    grid-row: 5/7;
+    align-self: center;
+    justify-self: center;
+    width: 70%;
+    position: absolute;
+    transform: translateY( 10rem);
+    box-shadow: 0 4px 6px #111;
+
+}
+
+.Image_3 {
+    grid-column: 6 / 8;
+    grid-row: 3/5;
+    align-self: center;
+    justify-self: center;
+    position: absolute;
+    transform:translate(-5rem, 10rem);
+    width: 70%;
+    box-shadow: 0 4px 6px #111;
+
+}
