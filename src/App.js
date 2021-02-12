@@ -18,6 +18,7 @@ import * as actions from './store/actions/index';
 import MyRecipes from './containers/MyRecipes/MyRecipes';
 import SingleRecipe from './containers/SingleRecipe/SingleRecipe';
 import Footer from './UI/Footer/Footer';
+import Header from './UI/Header/Header';
 
 /*
 export const TABLET_LANDSCAPE_BREAKPOINT = '56.25em'
@@ -71,6 +72,7 @@ class App extends Component {
     return (
       <div className={classes.App}>
         <Route path = "/" component = {NavigationBar}/>
+        <Route path ="/" exact component = {Header}/>
         <Route path = "/" exact component={Discounts} />
         <Route path = "/" exact component={RecipesContent} />
         <Route path = "/" component={Footer} />
@@ -81,6 +83,7 @@ class App extends Component {
         <Route path = "/favourite-recipes" component = {Favourites} />
         <Route path = "/my-recipes" component = {MyRecipes} />
         <Route path = "/single-recipe" component = {SingleRecipe}/>
+        ul
 
 
       </div>

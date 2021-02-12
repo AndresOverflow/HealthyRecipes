@@ -4,7 +4,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     background-color: #2D111C ;
     grid-column: 1 / -1;
-    grid-row: 3 / 4;
+    grid-row: 4 / 5;
     padding: 1rem;
     align-items: center;
     justify-items: center;

@@ -1,0 +1,64 @@
+.Header {
+
+    /*background-color: #2D111C ; */
+    height: 85vh;
+    background-image: linear-gradient(#2D111Cc5, #2D111Cc5) ,url(../../assets/images/header_image.jpg);
+    background-size: cover;
+    background-position: center;
+
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    padding: 1rem;
+    
+    display: grid;
+    grid-template-rows: repeat (8, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+
+
+}
+
+.Header_Title {
+    grid-column : 2 / 4;
+    grid-row: 1 / 3;
+    align-self: center;
+
+}
+
+.Header_SubTitle {
+    grid-column : 2 / 4;
+    grid-row: 3 / 6
+
+}
+
+.Header_Button {
+    grid-column : 5 / 6;
+    grid-row: 3 / 4;
+
+    width: 100%;
+    height: 80%;
+    border-radius: 3%;
+    border: 1px solid #000000;
+    box-shadow: 0 1px 2px #111;
+    background-color: #DDC8C4;
+    
+
+
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    color: #EFF9F0;
+
+    transition: all .2s;
+    
+
+
+}
+
+.Header_Button:hover {
+    transform: translateY(-1rem);
+    box-shadow: 0 2px 3px #111;
+    filter: brightness(85%);
+    cursor: pointer;
+
+}
+
+
