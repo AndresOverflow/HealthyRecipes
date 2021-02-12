@@ -1,0 +1,58 @@
+.Footer {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #2D111C ;
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+    padding: 1rem;
+    align-items: center;
+    justify-items: center;
+}
+
+.Footer_List {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+
+}
+
+.Nav {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 3rem;
+    align-items: center;
+}
+
+.Nav_Link:link,
+.Nav_Link:visited {
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1.5rem;
+    display: block;
+    transition: all 0.2s;
+
+}
+
+.Nav_Link:hover,
+.Nav_Link:active {
+    background-color: #3B1625;
+    transform: translateY(-0.3rem);
+}
+
+.Message {
+
+    grid-column: 2 / 3 ;
+    grid-row: 2 / 3;
+    color: whitesmoke;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    border-bottom: solid 1px whitesmoke;
+   
+
+
+}

@@ -15,12 +15,16 @@ class Recipe extends Component {
         const url_link = '/single-recipe/' + this.props.recipeId;
         console.log("recipeId: value!  " + this.props.recipeId);
         return (
-            <Link to={url_link}><div className = {classes.Recipe} >
-                <h2> {this.props.title} </h2>
-                <p> Image :D </p>
-                <p> {this.props.description}</p>
+            <div className = {classes.Recipe}>
+                <Link to={url_link}>
+                    <div className = {classes.RecipeId}>
+                        <h2 className = {classes.Recipe_Name}> {this.props.title} </h2>
+                        <p className = {classes.Recipe_Image}> Image :D </p>
+                        <p className = {classes.Recipe_Description}> {this.props.description}</p>
+                    </div>
+                </Link>
+
             </div>
-            </Link>
         );
     }
 }

@@ -1,5 +1,13 @@
 .Recipes {
-    width: 100%;
-    border : 1px solid;
+
+    background-color: #e8faec;
+
+    display : grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, minmax(max-content) 1fr);
+    grid-gap :3rem;
+    padding : 1.5rem;
+    
 
 }

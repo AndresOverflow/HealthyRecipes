@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import {Route} from 'react-router-dom';
 import {connect} from 'react-redux';
 
-import './App.css'
+
+import classes from './App.css'
 import NavigationBar from "./UI/NavigationBar/NavigationBar";
 import RecipesContent from "./UI/RecipesContent/RecipesContent";
-import styled from "styled-components";
+//import styled from "styled-components";
 import Discounts from "./UI/SideBar/Discounts";
 import CreateRecipe from './containers/CreateRecipe/CreateRecipe';
 import Favourites from './containers/Favourites/Favourites';
@@ -16,7 +17,9 @@ import * as actions from './store/actions/index';
 //import Aux from './hoc/Aux';
 import MyRecipes from './containers/MyRecipes/MyRecipes';
 import SingleRecipe from './containers/SingleRecipe/SingleRecipe';
+import Footer from './UI/Footer/Footer';
 
+/*
 export const TABLET_LANDSCAPE_BREAKPOINT = '56.25em'
 
 const AppBox = styled.div`
@@ -30,9 +33,7 @@ const AppBox = styled.div`
     grid-template-rows: max-content 1fr;
   }
 `
-
-
-
+*/
 class App extends Component {
 
   componentDidMount () {
@@ -68,10 +69,11 @@ class App extends Component {
     }
     */
     return (
-      <AppBox>
+      <div className={classes.App}>
         <Route path = "/" component = {NavigationBar}/>
         <Route path = "/" exact component={Discounts} />
         <Route path = "/" exact component={RecipesContent} />
+        <Route path = "/" component={Footer} />
         <Route path = "/create-recipe" component = {CreateRecipe} />
         <Route path = "/sign-up" component = {SignUp} />
         <Route path = "/login" component = {Login} />
@@ -81,7 +83,7 @@ class App extends Component {
         <Route path = "/single-recipe" component = {SingleRecipe}/>
 
 
-      </AppBox>
+      </div>
     );
   }
 }
