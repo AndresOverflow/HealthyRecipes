@@ -68,7 +68,7 @@
     align-items: center;
     font-size: 2rem;
     color: white;
-    transform: translateX(2rem);
+    
 }
 
 .Recipe_Star {
@@ -76,7 +76,6 @@
     align-items: center;
     font-size: 2rem;
     color: white;
-    transform: translateX(2rem);
 }
 
 .Recipe_Time_SVG {
@@ -84,6 +83,7 @@
     width: 2rem;
     height: 2rem;
 
+    transform: translateX(2rem);
 }
 .Recipe_Time_Text {
     transform: translateX(2rem);
@@ -94,6 +94,8 @@
     fill:rgb(54, 35, 11);
     width: 2rem;
     height: 2rem;
+
+    transform: translateX(2rem);
 }
 
 .Recipe_Star_Text {
