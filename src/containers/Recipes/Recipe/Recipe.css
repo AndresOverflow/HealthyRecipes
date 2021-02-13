@@ -17,29 +17,88 @@
     */
 }
 
+.Recipe:hover {
+    background-color: darkgreen;
+}
+
 .RecipeId {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-gap:1rem
+    grid-template-rows: 3rem 30rem 3rem;
+    grid-template-columns: 1fr;
+    grid-gap:1rem;
 }
 
 .Recipe_Name {
     background-color: darkgoldenrod;
-    grid-row: 1/2;
+    grid-row: 1 / 2;
+    grid-column: 1/-1;
 
 }
-.Recipe_Image_Temp {
-    background-color: darkgoldenrod;
+
+.Recipe_Figure {
     grid-row: 2/3;
+    grid-column: 1/-1;
 }
+
 .Recipe_Image {
-    grid-row: 4/5;
-    width: 10%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    
 
 }
 .Recipe_Description {
-    background-color: darkgoldenrod;
-    grid-row: 3/4;
+    grid-row: 2/3;
+    grid-column: 1/-1;
 
 }
+
+.Recipe_Characteristics {
+    grid-row: 3/4;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap:1rem
+
+
+    
+}
+.Recipe_Time {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+    transform: translateX(2rem);
+}
+
+.Recipe_Star {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+    transform: translateX(2rem);
+}
+
+.Recipe_Time_SVG {
+    fill:rgb(54, 35, 11);
+    width: 2rem;
+    height: 2rem;
+
+}
+.Recipe_Time_Text {
+    transform: translateX(2rem);
+
+}
+
+.Recipe_Star_SVG {
+    fill:rgb(54, 35, 11);
+    width: 2rem;
+    height: 2rem;
+}
+
+.Recipe_Star_Text {
+   transform: translateX(2rem);
+
+}
+
 
