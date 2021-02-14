@@ -26,6 +26,7 @@ class Recipe extends Component {
                         <figure className={classes.Recipe_Figure}>
                             <img src={french_toasts_image} alt="french_toast_image" className={classes.Recipe_Image}/>
                         </figure>
+                        <div className={classes.Recipe_BlurBackground}> </div>
                         <h3 className = {classes.Recipe_Description}> {this.props.description}</h3>
                         <div className={classes.Recipe_Characteristics}>
                             <div className={classes.Recipe_Time}>

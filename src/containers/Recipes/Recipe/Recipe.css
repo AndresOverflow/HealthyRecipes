@@ -1,38 +1,25 @@
 .Recipe {
-
-    background-color: #6B4D57;
-
     border: 1px solid #000;
-
     box-shadow: 0 2px 3px #111;
     text-align: center;
-    
-    /*
-    width: 23% ;
-    text-align: center;
-    margin : 2%;
-    padding-top : 16px;
-    padding-bottom: 16px;
-    display: inline-block;
-    */
 }
 
+/*
 .Recipe:hover {
     background-color: darkgreen;
 }
+*/
 
 .RecipeId {
     display: grid;
     grid-template-rows: 3rem 30rem 3rem;
     grid-template-columns: 1fr;
-    grid-gap:1rem;
 }
 
 .Recipe_Name {
-    background-color: darkgoldenrod;
+    background-color: rgb(8, 8, 8);
     grid-row: 1 / 2;
     grid-column: 1/-1;
-
 }
 
 .Recipe_Figure {
@@ -45,13 +32,25 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    
+    filter: blur(8px);
+    background-color: rgba(8, 8, 8, 0.877);
 
 }
+
 .Recipe_Description {
     grid-row: 2/3;
     grid-column: 1/-1;
+    visibility: hidden;
+}
 
+.Recipe_BlurBackground {
+    grid-row: 2/3;
+    grid-column: 1 / -1;
+    background-color: rgb(8, 8, 8);
+}
+
+.Recipe_Description:hover{
+    visibility: visible;
 }
 
 .Recipe_Characteristics {
@@ -79,7 +78,7 @@
 }
 
 .Recipe_Time_SVG {
-    fill:rgb(54, 35, 11);
+    fill:rgb(8, 8, 8);
     width: 2rem;
     height: 2rem;
 
@@ -91,7 +90,7 @@
 }
 
 .Recipe_Star_SVG {
-    fill:rgb(54, 35, 11);
+    fill:rgb(8, 8, 8);
     width: 2rem;
     height: 2rem;
 
@@ -102,5 +101,3 @@
    transform: translateX(2rem);
 
 }
-
-
