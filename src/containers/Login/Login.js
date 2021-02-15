@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
 
+import Aux from '../../hoc/Aux';
 
 import Spinner from '../../components/UI/Spinner/Spinner';
 
@@ -33,15 +34,15 @@ class Login extends Component {
         
         
         let form = (
-            <form onSubmit={this.onSubmitHandler}>
+            <form className = {classes.Login_Form}onSubmit={this.onSubmitHandler}>
             
-                <input type="text" placeholder = "password"
+                <input className={classes.Login_Form_Password} type="text" placeholder = "password"
                     value = {this.state.password} 
                     onChange={(event) => this.setState({password : event.target.value})}/>
-                <input type="text" placeholder = "email"
+                <input className={classes.Login_Form_Email} type="text" placeholder = "email"
                     value = {this.state.email} 
                     onChange={(event) => this.setState({email : event.target.value})}/>
-                    <button> Log in</button>
+                    <button className={classes.Login_Form_Button}> Log in</button>
 
             </form>
         );
@@ -56,11 +57,11 @@ class Login extends Component {
 
 
         let renderLoginForm = (
-            <div className={classes.SignUp}>
+            <div className={classes.Login}>
                 {errorMessage}
-                <div><h1>Login</h1></div>
-                <div>{form}</div>
-                <div><Link to="/sign-up"><h1>Not registered yet? Click here to SignUp</h1></Link></div>
+                <div className={classes.Login_Title}><h2 className={classes.Login_Title_Text}>Login</h2></div>
+                <div className={classes.Login_Form_Container}>{form}</div>
+                <div className={classes.Login_SignUpNavigation}><Link to="/sign-up"><h3 className={classes.Login_SignUpNavigation_Text}>Not registered yet? Click here to SignUp</h3></Link></div>
 
             </div>
         );
@@ -74,11 +75,11 @@ class Login extends Component {
         let authRedirect = this.props.isAuthenticated ? <Redirect to="/"/> : null;
 
         return (
-            <div>
+            <Aux>
                 {authRedirect}
                 {renderLoginForm}
                
-            </div>
+            </Aux>
         );
     }
 }

@@ -1,4 +1,65 @@
-.SignUp {
+.Login {
+    grid-row: 2/4;
+    grid-column: 1 / -1;
     text-align: center;
-    background-color: whitesmoke;
+    background-color: #DDC8C4;
+
+    display: grid;
+    grid-template-rows: minmax(10rem, 1fr) minmax(min-content, 1fr) minmax(10rem, 1fr);
+}
+
+.Login_Title {
+    grid-row: 1/2;
+    margin: auto auto;
+
+}
+
+.Login_Title_Text {
+
+    font-size: 5rem;
+    color: #A78D8B;
+}
+
+.Login_Form_Container {
+    grid-row: 2/3;
+}
+
+.Login_Form {
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 3rem;
+
+}
+
+.Login_Form_Password{
+    grid-row: 1/2;
+    background-color: purple;
+    width: 25%;
+    height: 150%;
+    margin: auto auto;
+}
+.Login_Form_Email{
+    width: 25%;
+    height: 150%;
+    grid-row: 2/3;
+    background-color: rebeccapurple;
+    margin: auto auto;
+}
+.Login_Form_Button{
+    grid-row: 3/4;
+    background-color: royalblue;
+    width: 12.5%;
+    height: 200%;
+    margin: auto auto;
+    
+}
+
+
+.Login_SignUpNavigation {
+    grid-row: 3/4;
+}
+
+.Login_SignUpNavigation_Text {
+    color: black;
+    font-size: 3rem;
 }
