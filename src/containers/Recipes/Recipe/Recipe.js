@@ -23,11 +23,12 @@ class Recipe extends Component {
                 <Link to={url_link}>
                     <div className = {classes.RecipeId}>
                         <h2 className = {classes.Recipe_Name}> {this.props.title} </h2>
+
+                        <h3 className = {classes.Recipe_Description}> {this.props.description} </h3>
                         <figure className={classes.Recipe_Figure}>
                             <img src={french_toasts_image} alt="french_toast_image" className={classes.Recipe_Image}/>
                         </figure>
                         <div className={classes.Recipe_BlurBackground}> </div>
-                        <h3 className = {classes.Recipe_Description}> {this.props.description}</h3>
                         <div className={classes.Recipe_Characteristics}>
                             <div className={classes.Recipe_Time}>
                                 <img src={hour_glass} alt="hour glass" className={classes.Recipe_Time_SVG}/>
