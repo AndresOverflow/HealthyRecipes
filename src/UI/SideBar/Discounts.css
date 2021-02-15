@@ -1,5 +1,40 @@
-.Discounts {
-    background-color: #44633F;
+.Discounts_Container {
+   /* background-color: #44633F;*/
     grid-row : 3/4;
     grid-column: 1/ 2;
+
+    background-color:#44633F;
+    text-align:center;
+    display:grid;
+    grid-template-rows: 5rem minmax(min-content, 10rem);
 }
+
+.Discounts_Title {
+    color: #DDC8C4;
+    grid-row: 1/2;
+    margin-top: 1rem;
+}
+
+.Discounts {
+    grid-row: 2/3;
+    display:grid;
+    grid-gap: 1rem;
+    text-align: center;
+
+    font-size : 2rem;
+    color: white;
+}
+
+.Discounts_Item {
+    color:white;
+    text-align: center;
+    transition: all .2s;
+}
+
+.Discounts_Item:hover {
+    background-color: #243E36;
+    box-shadow: 0 1px 2px #000;
+    color:white;
+    text-align: center;
+}
+

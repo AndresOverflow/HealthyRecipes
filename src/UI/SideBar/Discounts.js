@@ -26,9 +26,22 @@ export default () => {
     setDiscount(response.data.value)
     setLoading(false)
   }, [])
-  return <div className= {classes.Discounts}>
-      <h2> Discounts Section : </h2>
-      {discount ? <div>{discount}</div> : null}
-      {loading ? <Spinner/> : null}
-  </div>
+
+
+  return <div className= {classes.Discounts_Container}>
+            <h2 className={classes.Discounts_Title}> Discounts Section </h2>
+            <div className={classes.Discounts}> 
+              <div className= {classes.Discounts_Item}>
+                Discount 1
+              </div>
+              <div className= {classes.Discounts_Item}>
+                Discount 2
+              </div>
+              <div className= {classes.Discounts_Item}>
+                Discount 3
+              </div>
+            </div>
+            {discount ? <div>{discount}</div> : null}
+            {loading ? <Spinner/> : null}
+        </div>
 };
