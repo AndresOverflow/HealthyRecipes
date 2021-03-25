@@ -19,8 +19,9 @@ The following technologies & languages were used in order develop HealthyRecipes
 * Authentification
 * Axios for fetching data
 * HTML/CSS
+* CSS modules
 * JSX to build the components
-
+* Webpack
 
 ## Access Locally
 The project can be downloaded and run by executing the following commands:
