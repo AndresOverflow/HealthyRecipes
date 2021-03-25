@@ -4,10 +4,12 @@
 
     display : grid;
 
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: min-content min-content;
     grid-template-rows: repeat(3, minmax(max-content) 1fr);
-    grid-gap :3rem;
-    padding : 1.5rem;
+    justify-content: space-evenly;
+    grid-row-gap:7rem;
+    grid-column-gap:3rem;
+    padding : 2rem;
     
 
 }

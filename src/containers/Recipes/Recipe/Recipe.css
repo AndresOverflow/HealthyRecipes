@@ -1,22 +1,102 @@
 .Recipe {
-    border: 1px solid #000;
+    border: 0px solid #000;
     box-shadow: 0 2px 3px #111;
     text-align: center;
 }
 
-/*
+.Recipe_Link:link,
+.Recipe_Link:active,
+.Recipe_Link:visited {
+        text-decoration: none;
+    }
+
 .Recipe:hover {
-    background-color: darkgreen;
+    box-shadow:0 3px 5px 5px #111;
+    transform: scale(1.05);
 }
-*/
+
 
 .RecipeId {
     display: grid;
-    grid-template-rows: 3rem 30rem 3rem;
-    grid-template-columns: 1fr;
-    position: relative;
+    grid-template-rows: min-content min-content;
+    grid-template-columns: min-content;
 }
 
+.Recipe_Name {
+    background-color: rgb(8, 8, 8);
+    grid-row: 1/2;
+    grid-column:1/-1;
+
+}
+
+.Recipe_Image_Container {
+    grid-row:2/3;
+    grid-column: 1/-1;
+    display: grid;
+    justify-self: center;
+    align-self: center;
+    grid-template-columns: min-content;
+    grid-template-rows: min-content;
+}
+
+.Recipe_Image {
+    grid-row: 1/-1;
+    grid-column:1/-1;
+    background-position: center ;
+    background: cover;
+    /*line-height: 1;*/
+    line-height: 0;
+
+}
+
+.Recipe_Image_IMG {
+    max-width: 48rem;
+    max-height: 52rem;
+    /*@media only screen and (max-width: $bp-smallest) {
+        width: 27rem;
+        height: 21rem;
+    }
+    */
+
+}
+
+
+.Recipe_Description{
+    grid-row: 1/ -1;
+    grid-column: 1/ -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.Recipe_Description:hover{
+        background-color: rgba(0, 0, 0, 0.9);        
+        color: white;
+        opacity: 1;
+        box-shadow: 0px 0px 10px 2px rgb(17, 17, 17);
+
+
+}
+.Recipe_Description{
+
+}
+
+.Recipe_Description_Text{
+        text-align: center;
+        font-size: 2rem;
+
+        margin-top: 2rem;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .Recipe_Description:hover {
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+        background-color: rgba(0, 0, 0, 0.6);
+
+    }
+  }
+
+/*
 .RecipeId:hover {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.507);
@@ -109,3 +189,4 @@
    transform: translateX(2rem);
 
 }
+*/

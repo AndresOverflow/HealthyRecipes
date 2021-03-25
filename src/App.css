@@ -1,7 +1,7 @@
 .App {
   display: grid;
 
-  grid-template-rows: 5rem minmax(min-content,20rem) minmax(60vh, 1fr) minmax(min-content, 20rem);
+  grid-template-rows: min-content minmax(min-content,20rem) minmax(60vh, 1fr) minmax(min-content, 20rem);
   grid-template-columns: 13rem 1fr;
 
 }

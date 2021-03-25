@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import classes from './Recipe.css';
 
 import french_toasts_image from '../../../assets/images/french_toasts.jpg';
+import salad_image from '../../../assets/images/salad.jpg';
 import hour_glass from '../../../assets/svg/hour-glass.svg';
 import star_full from '../../../assets/svg/star-full.svg';
 
@@ -20,8 +21,56 @@ class Recipe extends Component {
         console.log("recipeId: value!  " + this.props.recipeId);
         return (
             <div className = {classes.Recipe}>
-                <Link to={url_link}>
-                    <div className = {classes.RecipeId}>
+                <Link className = {classes.Recipe_Link}to={url_link}>
+                    <div className= {classes.RecipeId}>
+                        <h2 className = {classes.Recipe_Name}> {this.props.title} </h2>
+                        <div class = {classes.Recipe_Image_Container}>
+                            <div className= {classes.Recipe_Image}>
+                                <img className={classes.Recipe_Image_IMG} src={salad_image} alt="french_toast_image"/> 
+                            </div>
+                            <div className = {classes.Recipe_Description}>
+                                <p className={classes.Recipe_Description_Text}> {this.props.description}</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </Link>
+
+            </div>
+        );
+    }
+}
+
+export default Recipe;
+
+/*
+<a class="project-image-container" href="https://github.com/AndresOverflow/Compiler" target="_blank">
+                <div class="project-image">
+                  <img class="image" src="/img/compiler_img.png" alt="Image of the project">
+                </div>
+                <div class="project-techs">
+                  <div class="project-techs__text">
+
+                    <div class="project-techs__text__title">
+                      Skills:
+                    </div>
+                    <ul>
+                      <il> Java</il>
+                      <br>
+                      <il> 68k Assembly</il>
+                      <br>
+                    </ul>
+
+                  </div>
+                </div>
+
+              </a>
+*/
+/*
+<div className = {classes.RecipeId}>
                         <h2 className = {classes.Recipe_Name}> {this.props.title} </h2>
 
                         <h3 className = {classes.Recipe_Description}> {this.props.description} </h3>
@@ -42,15 +91,7 @@ class Recipe extends Component {
 
                         
                     </div>
-                </Link>
-
-            </div>
-        );
-    }
-}
-
-export default Recipe;
-
+*/
 /*
 <div className={classes.Recipe_Characteristics}>
                             <div className={classes.Recipe_Time}>

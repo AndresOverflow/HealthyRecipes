@@ -12,6 +12,9 @@
     display : grid;
     grid-gap: 3rem;
     grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+    align-items: center;
+    align-content: center;
+    justify-items: center;
 }
 
 .Nav_Link:link,

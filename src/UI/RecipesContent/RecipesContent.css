@@ -5,7 +5,8 @@
     grid-column: 2/ -1;
     
     display: grid;
-    grid-template-rows: 10rem 1fr;
+    grid-template-rows: min-content min-content;
+    grid-row-gap: 3rem;
     /*
     text-align: center;
     height : 100%;
@@ -19,13 +20,23 @@
     grid-row : 1/2;
     grid-column : 1/ - 1;
     text-align: center;
+    display:grid;
+    grid-template-rows: min-content min-content;
+
+    grid-row-gap: 1rem;
+    justify-content: center;
+    justify-items: center;
 }
 .Recipes_Content_Title_Text {
     color: #2D111C;
     text-align: center;
     font-size :4rem;
     padding-top: 2%;
+    grid-row: 1/2;
 
+}
+.Recipes_Content_Title_SVG {
+    grid-row: 2/3;
 
 }
 
