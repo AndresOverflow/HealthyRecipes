@@ -46,12 +46,16 @@
     background: cover;
     /*line-height: 1;*/
     line-height: 0;
+    object-fit: cover;
 
 }
 
 .Recipe_Image_IMG {
-    max-width: 48rem;
-    max-height: 52rem;
+    width: 49rem;
+    height: 40rem;
+    object-fit: cover;
+    /*display:block;*/
+    
     /*@media only screen and (max-width: $bp-smallest) {
         width: 27rem;
         height: 21rem;
