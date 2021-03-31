@@ -6,9 +6,15 @@ import salad_image from '../../../assets/images/salad.jpg';
 import hour_glass from '../../../assets/svg/hour-glass.svg';
 import star_full from '../../../assets/svg/star-full.svg';
 
+import firebase from '../../../firebase/config';
+
 import {Link} from 'react-router-dom';
 
 class Recipe extends Component {
+
+    state = {
+        recipe_url : ""
+    }
 
     onRecipeClickedHandler () {
         //console.log("props of recipe :" + this.props);
@@ -19,14 +25,27 @@ class Recipe extends Component {
 
         const url_link = '/single-recipe/' + this.props.recipeId;
         console.log("recipeId: value!  " + this.props.recipeId);
+
+        
+        let storageRef = firebase.storage().ref()
+        let spaceRef = storageRef.child('images/'+this.props.title)
+        storageRef.child('images/' + this.props.title).getDownloadURL().then((url) => {
+          console.log(url)
+          if(this.state.recipe_url === "") {
+            this.setState({recipe_url : url})
+          }
+        
+        })
+
         return (
+            
             <div className = {classes.Recipe}>
                 <Link className = {classes.Recipe_Link}to={url_link}>
                     <div className= {classes.RecipeId}>
                         <h2 className = {classes.Recipe_Name}> {this.props.title} </h2>
                         <div class = {classes.Recipe_Image_Container}>
                             <div className= {classes.Recipe_Image}>
-                                <img className={classes.Recipe_Image_IMG} src={salad_image} alt="french_toast_image"/> 
+                                <img className={classes.Recipe_Image_IMG} src={this.state.recipe_url} alt="french_toast_image"/> 
                             </div>
                             <div className = {classes.Recipe_Description}>
                                 <p className={classes.Recipe_Description_Text}> {this.props.description}</p>
