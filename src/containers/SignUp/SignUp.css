@@ -1,4 +1,10 @@
 .SignUp {
+    grid-row: 2/4;
+    grid-column: 1 / -1;
     text-align: center;
-    background-color: whitesmoke;
+    background-color: #DDC8C4;
+
+    display: grid;
+    grid-template-rows: minmax(10rem, 1fr) minmax(min-content, 1fr) minmax(10rem, 1fr);
+
 }
